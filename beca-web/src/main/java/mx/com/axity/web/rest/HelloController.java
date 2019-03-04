@@ -1,7 +1,9 @@
 package mx.com.axity.web.rest;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
 import mx.com.axity.commons.to.UserTO;
+import mx.com.axity.model.UserDO;
 import mx.com.axity.services.facade.IbecaFacade;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,12 +38,14 @@ public class HelloController {
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/user", method = RequestMethod.POST, produces = "application/json")
-    public ResponseEntity saveUser(@RequestBody UserTO user) {
+    @RequestMapping(value = "/user", method = RequestMethod.POST, consumes = "application/json")
+    public ResponseEntity saveUser(@RequestBody String json) throws IOException {
         LOG.info("Se invoca /user");
 
-        LOG.info(user.getName() +
-                user.getId());
+        ObjectMapper mapper=new ObjectMapper();
+        UserTO userTO = mapper.readValue(json, UserTO.class);
+
+        facade.saveUser(userTO);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
