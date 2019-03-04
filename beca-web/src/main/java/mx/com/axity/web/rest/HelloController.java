@@ -30,9 +30,9 @@ public class HelloController {
 
 
 
-    @RequestMapping(value = "/find", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/users", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity<List<UserTO>> getAllUsers() {
-        LOG.info("Se invoca /find");
+        LOG.info("Se invoca /users");
         List<UserTO> users = this.IbecaFacade.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }

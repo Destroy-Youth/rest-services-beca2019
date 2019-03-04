@@ -16,5 +16,12 @@
         </createTable>
     </changeSet>
 
+    <changeSet author="Ivan Herrera Equihua" id="20190304-2">
+        <addAutoIncrement
+                          columnDataType="int"
+                          columnName="id"
+                          schemaName="public"
+                          tableName="users"/>
+    </changeSet>
 
 </databaseChangeLog> 

@@ -25,19 +25,6 @@ public class becaServiceImpl implements IbecaService {
     ModelMapper modelMapper;
 
     @Override
-    public List<UserTO> getUsers() {
-
-        LOG.info("Consultando usuarios");
-        List<UserDO> usersDO = this.userDAO.findByLastName("Rodriguez");
-
-        Type userDAOType = new TypeToken<List<UserDO>>() {}.getType();
-        List<UserTO> usersTO = this.modelMapper.map(usersDO, userDAOType);
-        LOG.info("Se retornan {} elementos", usersTO.size());
-
-        return usersTO;
-    }
-
-    @Override
     public Integer sum(Integer sum1, Integer sum2) {
         return sum1 + sum2;
     }
@@ -55,5 +42,10 @@ public class becaServiceImpl implements IbecaService {
     @Override
     public Integer division(Integer dividend, Integer divider) {
         return dividend/divider;
+    }
+
+    @Override
+    public List<UserDO> getAllUsers() {
+        return (List<UserDO>) userDAO.findAll();
     }
 }
