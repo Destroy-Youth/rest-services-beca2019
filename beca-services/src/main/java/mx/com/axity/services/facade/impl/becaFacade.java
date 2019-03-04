@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class becaFacade implements IbecaFacade {
@@ -35,11 +36,38 @@ public class becaFacade implements IbecaFacade {
     public List<UserTO> getAllUsers() {
 
         List<UserDO> userDOList = becaService.getAllUsers();
-        List<UserTO> userTOList =new ArrayList<>();
+        List<UserTO> userTOList;
 
         Type userTOType = new TypeToken<List<UserTO>>() {}.getType();
         userTOList = modelMapper.map(userDOList,userTOType);
 
         return userTOList;
+    }
+
+    @Override
+    public Optional<UserTO> getUser(Long id) {
+
+        Optional<UserDO> userDO = becaService.getUser(id);
+        Optional<UserTO> userTO;
+
+        Type userTOType = new TypeToken<Optional<UserTO>>() {}.getType();
+        userTO = modelMapper.map(userDO,userTOType);
+
+        return userTO;
+    }
+
+    @Override
+    public void saveUser(UserTO userTO) {
+
+    }
+
+    @Override
+    public void updateSave(UserTO userTO) {
+
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+
     }
 }

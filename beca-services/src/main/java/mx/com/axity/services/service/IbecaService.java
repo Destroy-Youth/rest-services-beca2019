@@ -4,6 +4,7 @@ import mx.com.axity.commons.to.UserTO;
 import mx.com.axity.model.UserDO;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IbecaService {
 
@@ -13,4 +14,8 @@ public interface IbecaService {
     Integer division(Integer dividend, Integer divider);
 
     List<UserDO> getAllUsers();
+    Optional<UserDO> getUser(Long id);
+    void saveUser(UserDO userDO);
+    void updateUser(UserDO userDO);
+    void deleteUser(Long id);
 }
