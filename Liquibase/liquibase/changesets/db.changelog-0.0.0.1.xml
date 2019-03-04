@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+
+
+    <changeSet author="Ivan Herrera Equihua" id="20190304-1">
+        <createTable tableName="users">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ds_name" type="varchar(255)"/>
+            <column name="ds_lastname" type="varchar(255)"/>
+            <column name="age" type="int"/>
+        </createTable>
+    </changeSet>
+
+
+</databaseChangeLog> 

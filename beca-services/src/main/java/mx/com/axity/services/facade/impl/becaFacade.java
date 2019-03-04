@@ -16,4 +16,13 @@ public class becaFacade implements IbecaFacade {
     public List<UserTO> getAllUsers() {
         return this.becaService.getUsers();
     }
+
+    @Override
+    public Integer operation(Integer a, Integer b) {
+
+        Integer c = becaService.sum(a,b);
+        b = becaService.subtraction(c, a);
+        Integer d = becaService.multiplication(b,4);
+        return becaService.division(d,4);
+    }
 }

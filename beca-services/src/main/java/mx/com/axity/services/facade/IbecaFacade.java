@@ -7,5 +7,5 @@ import java.util.List;
 public interface IbecaFacade {
 
     List<UserTO> getAllUsers();
-
+    Integer operation(Integer a, Integer b);
 }

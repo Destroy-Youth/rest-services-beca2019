@@ -42,4 +42,11 @@ public class HelloController {
         LOG.info("Se invoca /test");
         return new ResponseEntity<>("Prueba Ok", HttpStatus.OK);
     }
+
+    @RequestMapping(value = "/operation", method = RequestMethod.GET, produces = "application/json")
+    public ResponseEntity operation() {
+            LOG.info("Se invoca /operation");
+            Integer result = IbecaFacade.operation(4,10);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 }

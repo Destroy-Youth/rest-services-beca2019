@@ -36,4 +36,24 @@ public class becaServiceImpl implements IbecaService {
 
         return usersTO;
     }
+
+    @Override
+    public Integer sum(Integer sum1, Integer sum2) {
+        return sum1 + sum2;
+    }
+
+    @Override
+    public Integer subtraction(Integer sub1, Integer sub2) {
+        return sub1 - sub2;
+    }
+
+    @Override
+    public Integer multiplication(Integer mult1, Integer mult2) {
+        return mult1*mult2;
+    }
+
+    @Override
+    public Integer division(Integer dividend, Integer divider) {
+        return dividend/divider;
+    }
 }
