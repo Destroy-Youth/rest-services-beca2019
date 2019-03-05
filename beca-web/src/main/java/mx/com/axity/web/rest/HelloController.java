@@ -58,6 +58,23 @@ public class HelloController {
         return new ResponseEntity<>(userTO,HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/user", method = RequestMethod.PUT, consumes = "application/json")
+    public ResponseEntity updateUser(@RequestBody UserTO json) throws IOException {
+        LOG.info("Se invoca /user");
+
+        facade.saveUser(json);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/user", method = RequestMethod.DELETE, produces = "application/json")
+    public ResponseEntity deleteUser(@RequestParam Long id) {
+        LOG.info("Se invoca /users");
+
+        facade.deleteUser(id);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
     @RequestMapping(value = "/test", method = RequestMethod.GET, produces = "application/json")
     public ResponseEntity test() {

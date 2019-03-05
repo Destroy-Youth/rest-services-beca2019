@@ -66,11 +66,14 @@ public class becaFacade implements IbecaFacade {
 
     @Override
     public void updateSave(UserTO userTO) {
-
+        UserDO userDO;
+        Type userDOType = new TypeToken<UserDO>() {}.getType();
+        userDO = modelMapper.map(userTO,userDOType);
+        becaService.saveUser(userDO);
     }
 
     @Override
     public void deleteUser(Long id) {
-
+        becaService.deleteUser(id);
     }
 }
