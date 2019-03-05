@@ -69,4 +69,9 @@ public class becaServiceImpl implements IbecaService {
     public void deleteUser(Long id) {
         userDAO.deleteById(id);
     }
+
+    @Override
+    public Optional<UserDO> findUser(Long id) {
+        return userDAO.findById(id);
+    }
 }

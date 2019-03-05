@@ -62,7 +62,7 @@ public class HelloController {
     public ResponseEntity updateUser(@RequestBody UserTO json) throws IOException {
         LOG.info("Se invoca /user");
 
-        facade.saveUser(json);
+        facade.updateUser(json);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
