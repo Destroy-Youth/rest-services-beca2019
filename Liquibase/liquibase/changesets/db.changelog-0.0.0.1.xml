@@ -24,4 +24,22 @@
                           tableName="users"/>
     </changeSet>
 
+    <changeSet author="Ivan Herrera Equihua" id="20190304-3">
+        <createTable tableName="login">
+            <column name="id" type="INT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="username" type="varchar(255)"/>
+            <column name="password" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="Ivan Herrera Equihua" id="20190304-4">
+        <addForeignKeyConstraint baseColumnNames="id"
+         baseTableName="login"
+          constraintName="fk_login_users"
+           referencedColumnNames="id"
+            referencedTableName="users"/>
+    </changeSet>
+
 </databaseChangeLog> 
