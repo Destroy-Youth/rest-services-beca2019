@@ -3,8 +3,7 @@ package mx.com.axity.web.rest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
 import mx.com.axity.commons.to.UserTO;
-import mx.com.axity.model.UserDO;
-import mx.com.axity.services.facade.IbecaFacade;
+import mx.com.axity.services.facade.IUserFacade;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +27,7 @@ public class HelloController {
     //RestTemplate restTemplate;
 
     @Autowired
-    IbecaFacade facade;
+    IUserFacade facade;
 
 
     @RequestMapping(value = "/users", method = RequestMethod.GET, produces = "application/json")

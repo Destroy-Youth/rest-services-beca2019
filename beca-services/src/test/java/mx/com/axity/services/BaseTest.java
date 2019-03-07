@@ -1,6 +1,5 @@
 package mx.com.axity.services;
 
-import mx.com.axity.services.service.IbecaService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -19,8 +18,4 @@ public abstract class BaseTest {
 
     @Autowired
     public TestEntityManager entityManager;
-
-    @Autowired
-    public IbecaService becaService;
-
 }

@@ -1,6 +1,6 @@
 package mx.com.axity.web;
 
-import mx.com.axity.services.facade.IbecaFacade;
+import mx.com.axity.services.facade.IUserFacade;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -21,5 +21,5 @@ public abstract class BaseTest {
     public TestEntityManager entityManager;
 
     @Autowired
-    public IbecaFacade becaFacade;
+    public IUserFacade becaFacade;
 }

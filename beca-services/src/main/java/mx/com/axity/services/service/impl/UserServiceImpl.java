@@ -1,23 +1,21 @@
 package mx.com.axity.services.service.impl;
 
-import mx.com.axity.commons.to.UserTO;
 import mx.com.axity.model.UserDO;
 import mx.com.axity.persistence.UserDAO;
-import mx.com.axity.services.service.IbecaService;
+import mx.com.axity.services.service.IUserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.lang.reflect.Type;
+
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class becaServiceImpl implements IbecaService {
+public class UserServiceImpl implements IUserService {
 
-    static final Logger LOG = LogManager.getLogger(becaServiceImpl.class);
+    static final Logger LOG = LogManager.getLogger(UserServiceImpl.class);
 
     @Autowired
     UserDAO userDAO;
