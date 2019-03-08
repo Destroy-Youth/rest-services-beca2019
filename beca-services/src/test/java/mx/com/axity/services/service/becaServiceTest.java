@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
@@ -56,5 +57,13 @@ public class becaServiceTest extends BaseTest {
             Assert.assertEquals("No value present", e.getMessage());
         }
 
+    }
+
+    @Test
+    public void checkDaoResult(){
+        List<UserDO> userDOList = service.getAllUsers();
+        String i = userDOList.get(1).getLoginDO().getPassword();
+        System.out.println(i);
+        Assert.assertTrue(true);
     }
 }

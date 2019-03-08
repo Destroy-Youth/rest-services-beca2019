@@ -1,8 +1,11 @@
 package mx.com.axity.services.facade.impl;
 
+import mx.com.axity.commons.to.LoginTO;
 import mx.com.axity.commons.to.UserTO;
+import mx.com.axity.model.LoginDO;
 import mx.com.axity.model.UserDO;
 import mx.com.axity.services.facade.IUserFacade;
+import mx.com.axity.services.service.ILoginService;
 import mx.com.axity.services.service.IUserService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -18,6 +21,9 @@ public class UserFacadeImpl implements IUserFacade {
 
     @Autowired
     private IUserService becaService;
+
+    @Autowired
+    private ILoginService loginService;
 
     @Autowired
     private ModelMapper modelMapper;

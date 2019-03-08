@@ -35,11 +35,27 @@
     </changeSet>
 
     <changeSet author="Ivan Herrera Equihua" id="20190304-4">
-        <addForeignKeyConstraint baseColumnNames="id"
-         baseTableName="login"
-          constraintName="fk_login_users"
+    <addColumn 
+            schemaName="public"
+            tableName="users">
+        <column name="login" type="int"/>
+    </addColumn>
+</changeSet>
+
+    <changeSet author="Ivan Herrera Equihua" id="20190304-5">
+        <addForeignKeyConstraint baseColumnNames="login"
+         baseTableName="users"
+          constraintName="fk_users_login"
            referencedColumnNames="id"
-            referencedTableName="users"/>
+            referencedTableName="login"/>
+    </changeSet>
+
+    <changeSet author="Ivan Herrera Equihua" id="20190304-6">
+        <addAutoIncrement
+                          columnDataType="int"
+                          columnName="id"
+                          schemaName="public"
+                          tableName="login"/>
     </changeSet>
 
 </databaseChangeLog> 
