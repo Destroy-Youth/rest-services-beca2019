@@ -6,7 +6,7 @@ import mx.com.axity.model.UserDO;
 import java.util.List;
 import java.util.Optional;
 
-public interface IbecaService {
+public interface IUserService {
 
     Integer sum(Integer sum1,Integer sum2);
     Integer subtraction(Integer sub1,Integer sub2);

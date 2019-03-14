@@ -8,6 +8,7 @@ public class UserTO implements Serializable {
     private String name;
     private String lastName;
     private int age;
+    private LoginTO loginTO;
 
     public Long getId() {
         return id;
@@ -39,5 +40,13 @@ public class UserTO implements Serializable {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public LoginTO getLoginTO() {
+        return loginTO;
+    }
+
+    public void setLoginTO(LoginTO loginTO) {
+        this.loginTO = loginTO;
     }
 }

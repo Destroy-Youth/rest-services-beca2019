@@ -1,10 +1,11 @@
 package mx.com.axity.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "users", schema = "public")
-public class UserDO {
+public class UserDO implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "UsersSeq")
@@ -19,6 +20,13 @@ public class UserDO {
     private String lastName;
     @Column(name = "age")
     private int age;
+    @OneToOne(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "login",
+            referencedColumnName = "id")
+    private
+    LoginDO loginDO;
+
 
     protected UserDO() {
     }
@@ -59,5 +67,13 @@ public class UserDO {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public LoginDO getLoginDO() {
+        return loginDO;
+    }
+
+    public void setLoginDO(LoginDO loginDO) {
+        this.loginDO = loginDO;
     }
 }
