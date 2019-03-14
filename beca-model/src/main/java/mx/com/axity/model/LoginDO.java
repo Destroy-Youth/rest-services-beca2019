@@ -16,7 +16,7 @@ public class LoginDO implements Serializable {
     private String username;
     @Column(name = "password")
     private String password;
-    @Column(name = "user")
+    @Column(name = "usuario")
     private Long user;
 
     public Long getId() {

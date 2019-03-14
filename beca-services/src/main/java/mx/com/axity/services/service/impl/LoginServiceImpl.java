@@ -30,7 +30,8 @@ public class LoginServiceImpl implements ILoginService{
 
     @Override
     public void updateLogin(LoginDO loginDO) {
-        loginDAO.save(loginDAO.findById(loginDO.getId()).get());
+        loginDAO.findById(loginDO.getId()).get();
+        loginDAO.save(loginDO);
     }
 
     @Override

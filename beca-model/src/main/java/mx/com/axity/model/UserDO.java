@@ -17,7 +17,7 @@ public class UserDO {
     private String name;
     @Column(name = "ds_lastname")
     private String lastName;
-    @Column(name = "age")
+    @Column(name = "age", columnDefinition = "int")
     private int age;
 
     protected UserDO() {

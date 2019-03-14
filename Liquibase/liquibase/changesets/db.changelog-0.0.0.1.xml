@@ -31,12 +31,12 @@
             </column>
             <column name="username" type="varchar(255)"/>
             <column name="password" type="varchar(255)"/>
-            <column name="user" type="int"/>
+            <column name="usuario" type="int"/>
         </createTable>
     </changeSet>
 
     <changeSet author="Ivan Herrera Equihua" id="20190304-4">
-        <addForeignKeyConstraint baseColumnNames="user"
+        <addForeignKeyConstraint baseColumnNames="usuario"
          baseTableName="login"
           constraintName="fk_login_users"
            referencedColumnNames="id"
